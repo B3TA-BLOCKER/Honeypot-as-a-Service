@@ -1,0 +1,8 @@
+version: '3'
+services:
+  honeypot:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./logs:/opt/haas/logs
