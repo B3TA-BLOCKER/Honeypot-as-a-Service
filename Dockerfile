@@ -20,4 +20,5 @@ COPY . /app/
 EXPOSE 80
 
 # Run the application
-CMD ["python3", "/app/app.py"]
+CMD ["python3", "/app/webapp/app.py"]
+
