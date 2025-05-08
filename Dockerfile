@@ -17,7 +17,7 @@ RUN pip3 install -r /app/requirements.txt
 COPY . /app/
 
 # Expose the port the app runs on
-EXPOSE 80
+EXPOSE 5000
 
 # Run the application
 CMD ["python3", "/app/webapp/app.py"]
