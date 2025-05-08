@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛡️ Honeypot-as-a-Service (HaaS)
+# 🍯 Honeypot-as-a-Service (HaaS)
 
 </div>
 
@@ -9,17 +9,17 @@ A modern, educational honeypot platform designed to simulate a vulnerable health
 
 <br>
 
-> 📚 **This project was developed as the semester project for the DevOps course in the 6th semester of my Bachelor's in Cyber Security.**
+>  **This project was developed as the semester project for the DevOps course in the 6th semester of my Bachelor's in Cyber Security.**
 
 ---
 
-## 🧩 Architecture Overview
+##  Architecture Overview
 
 ![Architecture Diagram](webapp/templates/architecture.png)
 
 ---
 
-## 🚀 Features
+##  Features
 
 - **Realistic Healthcare Web App**: Simulates patient management, document uploads, and user authentication.
 - **Built-in Honeypot Traps**: Hidden endpoints and intentional vulnerabilities (SQLi, XSS, path traversal) to attract attackers.
@@ -51,7 +51,7 @@ Honeypot-as-a-Service/
 
 ---
 
-## 🛠️ Installation
+##  Installation
 
 ### Prerequisites
 - Python 3.8+
@@ -98,7 +98,7 @@ terraform apply
 
 ---
 
-## 🎯 Usage
+##  Usage
 
 After setup, access the application at:
 
@@ -113,7 +113,7 @@ Default credentials:
 
 ---
 
-## 🔍 Attack Simulation
+##  Attack Simulation
 
 The system includes intentional vulnerabilities:
 
@@ -125,7 +125,7 @@ All attack attempts are logged in `logs/attack.log`.
 
 ---
 
-## 📝 Logging
+##  Logging
 
 Logs are stored in:
 
