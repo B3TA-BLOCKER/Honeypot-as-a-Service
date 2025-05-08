@@ -1,14 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Fake Admin Panel</title>
-</head>
-<body>
-    <h1>Login to the Admin Panel</h1>
-    <form action="/login" method="POST">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit">Login</button>
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}MediSecure - Healthcare Security System{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+    <!-- Page Header -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">Welcome to MediSecure</h1>
+        <p class="text-gray-600">A secure healthcare management system</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <div class="bg-blue-600 px-6 py-4 text-white">
+            <h2 class="text-lg font-semibold">Healthcare Security System</h2>
+        </div>
+        <div class="p-6">
+            <p class="mb-4">MediSecure provides a secure platform for managing patient data and healthcare records.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="border border-gray-200 rounded-md p-4">
+                    <h3 class="font-semibold text-lg mb-2">Patient Management</h3>
+                    <p class="text-gray-600">Search and manage patient records securely.</p>
+                    <a href="{{ url_for('patient_search') }}" class="mt-2 inline-block text-blue-600 hover:underline">Search Patients →</a>
+                </div>
+                
+                <div class="border border-gray-200 rounded-md p-4">
+                    <h3 class="font-semibold text-lg mb-2">Document Upload</h3>
+                    <p class="text-gray-600">Upload and manage patient documents.</p>
+                    <a href="{{ url_for('file_upload') }}" class="mt-2 inline-block text-blue-600 hover:underline">Upload Files →</a>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <a href="{{ url_for('login') }}" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 inline-block">Login to Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

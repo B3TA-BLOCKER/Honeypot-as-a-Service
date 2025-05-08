@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Edit Patient{% endblock %}
+{% block content %}
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <h2 class="text-xl font-bold mb-4">Edit Patient</h2>
+    <form method="POST">
+        <div class="mb-4">
+            <label class="block text-gray-700">Name</label>
+            <input type="text" name="name" value="{{ patient.name }}" class="border rounded px-3 py-2 w-full" />
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Age</label>
+            <input type="number" name="age" value="{{ patient.age }}" class="border rounded px-3 py-2 w-full" />
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Condition</label>
+            <input type="text" name="condition" value="{{ patient.condition }}" class="border rounded px-3 py-2 w-full" />
+        </div>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Save</button>
+        <a href="{{ url_for('patient_search') }}" class="ml-4 text-gray-600 hover:underline">Cancel</a>
+    </form>
+</div>
+{% endblock %}

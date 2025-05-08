@@ -1,0 +1,4 @@
+username,password,role,email,department
+admin,admin,Administrator,admin@medisecure.example,Administration
+doctor,doctor123,Doctor,doctor@medisecure.example,Cardiology
+nurse,nurse123,Nurse,nurse@medisecure.example,Emergency

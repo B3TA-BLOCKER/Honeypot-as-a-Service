@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}MediSecure{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- You can add your CSS links here -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-600 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="{{ url_for('index') }}" class="font-bold text-xl">MediSecure</a>
+            <div>
+                <a href="{{ url_for('patient_search') }}" class="mr-4 hover:underline">Patients</a>
+                <a href="{{ url_for('file_upload') }}" class="mr-4 hover:underline">Upload</a>
+                {% if session['username'] %}
+                    <span class="mr-4">Hello, {{ session['username'] }}</span>
+                    <a href="{{ url_for('logout') }}" class="hover:underline text-red-200">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="hover:underline">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <main class="container mx-auto py-8">
+        {% block content %}{% endblock %}
+    </main>
+    <!-- You can add your JS scripts here -->
+</body>
+</html>
