@@ -45,7 +45,7 @@ Honeypot-as-a-Service/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-repo/Honeypot-as-a-Service.git
+https://github.com/B3TA-BLOCKER/Honeypot-as-a-Service.git
 cd Honeypot-as-a-Service
 ```
 
