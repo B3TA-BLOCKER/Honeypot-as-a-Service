@@ -1,10 +1,25 @@
-# 🛡️ Honeypot-as-a-Service (HaaS)
+<div align="center">
+
+# 🍯 Honeypot-as-a-Service (HaaS)
+
+</div>
+
 
 A modern, educational honeypot platform designed to simulate a vulnerable healthcare management system. HaaS helps security professionals and students learn about attack detection, logging, and incident response in a realistic environment.
 
+<br>
+
+>  **This project was developed as the semester project for the DevOps course in the 6th semester of my Bachelor's in Cyber Security.**
+
 ---
 
-## 🚀 Features
+##  Architecture Overview
+
+![Architecture Diagram](webapp/templates/architecture.png)
+
+---
+
+##  Features
 
 - **Realistic Healthcare Web App**: Simulates patient management, document uploads, and user authentication.
 - **Built-in Honeypot Traps**: Hidden endpoints and intentional vulnerabilities (SQLi, XSS, path traversal) to attract attackers.
@@ -17,10 +32,11 @@ A modern, educational honeypot platform designed to simulate a vulnerable health
 ## 📁 Project Structure
 
 ```
+
 Honeypot-as-a-Service/
 ├── webapp/                  # Flask application code
 │   ├── app.py               # Main application logic
-│   ├── templates/           # HTML templates
+│   ├── templates/           # HTML templates (includes architecture.png)
 │   └── utils/               # Utility modules
 │       └── logger.py        # Logging functionality
 ├── terraform/               # Infrastructure as code
@@ -30,11 +46,12 @@ Honeypot-as-a-Service/
 ├── docker-compose.yml       # Local development setup
 ├── requirements.txt         # Python dependencies
 └── README.md                # This file
-```
+
+````
 
 ---
 
-## 🛠️ Installation
+##  Installation
 
 ### Prerequisites
 - Python 3.8+
@@ -45,29 +62,34 @@ Honeypot-as-a-Service/
 
 1. Clone the repository:
 ```bash
-https://github.com/B3TA-BLOCKER/Honeypot-as-a-Service.git
+git clone https://github.com/B3TA-BLOCKER/Honeypot-as-a-Service.git
 cd Honeypot-as-a-Service
-```
+````
 
 2. Install Python dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 3. Run the application:
+
 ```bash
 python webapp/app.py
 ```
 
 ### Docker Setup
+
 ```bash
 docker-compose up --build
 ```
 
 ### AWS Deployment
+
 1. Install Terraform
 2. Configure AWS credentials
 3. Deploy:
+
 ```bash
 cd terraform
 terraform init
@@ -76,22 +98,25 @@ terraform apply
 
 ---
 
-## 🎯 Usage
+##  Usage
 
 After setup, access the application at:
-- Local: http://localhost:5000
-- Docker: http://localhost:5000
-- AWS: Use the public IP output by Terraform
+
+* Local: [http://localhost:5000](http://localhost:5000)
+* Docker: [http://localhost:5000](http://localhost:5000)
+* AWS: Use the public IP output by Terraform
 
 Default credentials:
-- Username: admin
-- Password: admin
+
+* Username: `admin`
+* Password: `admin`
 
 ---
 
-## 🔍 Attack Simulation
+##  Attack Simulation
 
 The system includes intentional vulnerabilities:
+
 1. SQL Injection: Try `/api/v1/search?q=' OR 1=1--`
 2. XSS: Try submitting `<script>alert(1)</script>` in forms
 3. Path Traversal: Try accessing `/../../etc/passwd`
@@ -100,19 +125,21 @@ All attack attempts are logged in `logs/attack.log`.
 
 ---
 
-## 📝 Logging
+##  Logging
 
 Logs are stored in:
-- `logs/access.log`: All requests
-- `logs/attack.log`: Detected attack attempts
-- `logs/error.log`: Application errors
+
+* `logs/access.log`: All HTTP requests
+* `logs/attack.log`: Detected attack attempts
+* `logs/error.log`: Application errors
 
 Logs include:
-- Timestamps
-- IP addresses
-- Geolocation data
-- Browser fingerprints
-- Attack details
+
+* Timestamps
+* IP addresses
+* Geolocation data
+* Browser fingerprints
+* Attack details
 
 ---
 
@@ -130,4 +157,3 @@ Logs include:
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
----
