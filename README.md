@@ -34,18 +34,42 @@ A modern, educational honeypot platform designed to simulate a vulnerable health
 ```
 
 Honeypot-as-a-Service/
-├── webapp/                  # Flask application code
-│   ├── app.py               # Main application logic
-│   ├── templates/           # HTML templates (includes architecture.png)
-│   └── utils/               # Utility modules
-│       └── logger.py        # Logging functionality
-├── terraform/               # Infrastructure as code
-│   ├── main.tf              # AWS deployment configuration
-│   └── .terraform.lock.hcl  # Terraform lock file
-├── Dockerfile               # Container configuration
-├── docker-compose.yml       # Local development setup
-├── requirements.txt         # Python dependencies
-└── README.md                # This file
+├── .github/
+│   └── workflows/              # CI/CD pipeline (e.g., deploy.yml)
+├── data/                       # Optional: demo datasets, backups, etc.
+│   ├── patients.csv
+│   └── users.csv
+├── logs/                       # Recon & system logs
+│   ├── access.log
+│   ├── attack.log
+│   ├── error.log
+│   └── honeypot.log
+├── myenv/                      # Local Python virtual environment 
+│   ├── Include/
+│   ├── Lib/
+│   └── Scripts/
+├── terraform/                  # Infrastructure as Code
+│   ├── main.tf                 # EC2 provisioning config
+│   ├── terraform.tfstate       # Terraform state file (generated)
+│   ├── terraform.tfstate.backup
+│   └── .terraform/             # Terraform provider plugins
+├── uploads/                    # (Optional) Attacker file uploads are saved here
+├── webapp/                     # Main Flask honeypot web application
+│   ├── app.py                  # Core server logic (request recon, logging)
+│   ├── templates/              # HTML templates (admin login, dashboard, etc.)
+│   │   ├── architecture.png    # Visual architecture diagram
+│   │   ├── index.html
+│   │   ├── login.html
+│   │   ├── dashboard.html
+│   │   └── view_patient.html   # Fake pages for realism
+│   └── utils/                  # Python utility functions
+│       └── logger.py           # Handles writing CSV recon logs
+├── Dockerfile                  # Docker configuration
+├── docker-compose.yml          # Runs multi-container setup if needed
+├── requirements.txt            # Python dependency list
+├── README.md                   # Full project overview
+└── documentation/              # All project write-ups and final report
+
 
 ````
 
